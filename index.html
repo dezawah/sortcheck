@@ -90,6 +90,15 @@ var totalSize;
 var finishSize;
 var finishFlag;
 
+ function shuffleInPlace(a) {
+  for (var i = a.length - 1; i > 0; i--) {
+    var j = Math.floor(Math.random() * (i + 1));
+    var t = a[i];
+    a[i] = a[j];
+    a[j] = t;
+  }
+}
+
 //変数の初期化+++++++++++++++++++++++++++++++++++++++++++++
 function initList(){
 var n = 0;
@@ -101,6 +110,7 @@ lstMember[n] = new Array();
 for (i=0; i<namMember.length; i++) {
 lstMember[n][i] = i;
 }
+ shuffleInPlace(lstMember[n]);
 parent[n] = -1;
 totalSize = 0;
 n++;
@@ -393,5 +403,6 @@ showImage();
 
 </body>
 </html>
+
 
 
